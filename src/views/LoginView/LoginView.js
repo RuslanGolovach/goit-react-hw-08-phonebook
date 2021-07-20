@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import authOperations from '../../redux/auth/auth-operations';
 
 const styles = {
   form: {
@@ -23,7 +25,7 @@ class LoginView extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-
+    this.props.onLogin(this.state);
     this.setState({ name: '', email: '', password: '' });
   };
 
@@ -40,7 +42,7 @@ class LoginView extends Component {
           autoComplete="off"
         >
           <label style={styles.label}>
-            Почта
+            Email
             <input
               type="email"
               name="email"
@@ -50,7 +52,7 @@ class LoginView extends Component {
           </label>
 
           <label style={styles.label}>
-            Пароль
+            Password
             <input
               type="password"
               name="password"
@@ -59,11 +61,15 @@ class LoginView extends Component {
             />
           </label>
 
-          <button type="submit">Войти</button>
+          <button type="submit">Log In</button>
         </form>
       </div>
     );
   }
 }
 
-export default LoginView;
+const mapDispatchToProps = {
+  onLogin: authOperations.logIn,
+};
+
+export default connect(null, mapDispatchToProps)(LoginView);
