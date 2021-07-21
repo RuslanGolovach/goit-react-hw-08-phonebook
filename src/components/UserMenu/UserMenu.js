@@ -3,26 +3,13 @@ import { connect } from 'react-redux';
 import authSelectors from '../../redux/auth/auth-selectors';
 import authOperations from '../../redux/auth/auth-operations';
 import userAvatar from './userAvatar.png';
-
-const styles = {
-  container: {
-    display: 'flex',
-    alignItems: 'center',
-  },
-  avatar: {
-    marginRight: 4,
-  },
-  name: {
-    fontWeight: 700,
-    marginRight: 12,
-  },
-};
+import styles from './UserMenu.module.css';
 
 const UserMenu = ({ avatar, name, onLogout }) => (
-  <div style={styles.container}>
-    <img src={avatar} alt="" width="32" style={styles.avatar} />
-    <span style={styles.name}>Welcome, {name}</span>
-    <button type="button" onClick={onLogout}>
+  <div className={styles.Container}>
+    <img src={avatar} alt="" width="32" className={styles.Avatar} />
+    <span className={styles.Name}>Welcome, {name}!</span>
+    <button className={styles.BtnLogout} type="button" onClick={onLogout}>
       Logout
     </button>
   </div>

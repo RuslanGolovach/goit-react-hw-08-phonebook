@@ -11,11 +11,11 @@
   font-size: 22px;
   margin: 0 auto;
   border-radius: 10px;
-  box-shadow: 0 0 10px wheat;
+  box-shadow: 0 0 10px #4096cf;
 }
 
 .SpanFind {
-  color: wheat;
+  color: black;
   font-size: 22px;
   font-weight: 500;
   margin-bottom: 15px;

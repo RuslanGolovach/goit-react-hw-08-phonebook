@@ -5,18 +5,10 @@ import Navigation from '../Navigation';
 import UserMenu from '../UserMenu';
 import AuthNav from '../AuthNav';
 import authSelectors from '../../redux/auth/auth-selectors';
-
-const styles = {
-  header: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    borderBottom: '1px solid #2A363B',
-  },
-};
+import styles from './AppBar.module.css';
 
 const AppBar = ({ isAuthenticated }) => (
-  <header style={styles.header}>
+  <header className={styles.Header}>
     <Navigation />
     {isAuthenticated ? <UserMenu /> : <AuthNav />}
   </header>

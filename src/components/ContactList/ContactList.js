@@ -7,7 +7,7 @@ import {
   filteredContacts,
 } from '../../redux/contacts/contacts-selectors';
 import ContactItem from './ContactItem';
-import PreLoader from '../PreLoader/PreLoader';
+import PreLoader from '../PreLoader';
 import styles from './ContactList.module.css';
 
 class ContactList extends Component {

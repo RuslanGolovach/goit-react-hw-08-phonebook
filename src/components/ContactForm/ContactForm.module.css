@@ -8,8 +8,8 @@
   border-radius: 5px;
   margin: 0 auto;
   padding: 15px;
-  background-color: rgba(245, 222, 179, 0.25);
-  box-shadow: 0 0 5px 5px wheat;
+  background-color: #4096cf63;
+  box-shadow: 0 0 5px 5px #4096cf;
 }
 
 .Input {
@@ -37,7 +37,7 @@
   margin-bottom: 8px;
   font-size: 22px;
   font-weight: 500;
-  color: rgb(245, 211, 149);
+  color: black;
 }
 
 .BtnContact {

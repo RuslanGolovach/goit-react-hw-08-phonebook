@@ -1,17 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import authOperations from '../../redux/auth/auth-operations';
-
-const styles = {
-  form: {
-    width: 320,
-  },
-  label: {
-    display: 'flex',
-    flexDirection: 'column',
-    marginBottom: 15,
-  },
-};
+import styles from './RegisterView.module.css';
 
 class RegisterView extends Component {
   state = {
@@ -37,53 +27,66 @@ class RegisterView extends Component {
 
     return (
       <div>
-        <h1>Страница регистрации</h1>
+        <h1 className={styles.TitleRegister}>SIGN UP</h1>
 
         <form
+          className={styles.FormRegister}
           onSubmit={this.handleSubmit}
           style={styles.form}
-          autoComplete="off"
+          autoComplete="on"
         >
           <label style={styles.label}>
-            Name
             <input
+              className={styles.InputRegister}
               type="text"
               name="name"
+              placeholder="Name"
               value={name}
               onChange={this.handleChange}
             />
           </label>
 
           <label style={styles.label}>
-            Email
             <input
+              className={styles.InputRegister}
               type="email"
               name="email"
+              placeholder="Email"
               value={email}
               onChange={this.handleChange}
             />
           </label>
 
           <label style={styles.label}>
-            Password
             <input
+              className={styles.InputRegister}
               type="password"
               name="password"
+              placeholder="Password"
               value={password}
               onChange={this.handleChange}
             />
           </label>
 
-          <button type="submit">Sing Up</button>
+          <button className={styles.BtnRegistet} type="submit">
+            Sing Up
+          </button>
         </form>
       </div>
     );
   }
 }
 
+/*
+ * 1-й вариант
+ */
 // const mapDispatchToProps = {
 //   onRegister: authOperations.register,
 // };
+
+/*
+ * 2-й вариант
+ */
 
 const mapDispatchToProps = dispatch => ({
   onRegister: data => dispatch(authOperations.register(data)),
